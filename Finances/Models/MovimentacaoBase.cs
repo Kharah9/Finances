@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Finances.Models
 {
@@ -10,6 +11,7 @@ namespace Finances.Models
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Digite um valor")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Valor { get; set; }
         public bool Recorrente { get; set; }
         [Required(ErrorMessage = "Escolha um tipo de conta")]
